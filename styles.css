@@ -1,0 +1,64 @@
+:root{
+    --number:#333333;
+    --operator:#FF9F0A;
+    --func:#A5A5A5;
+    --background:black;
+}
+
+body{
+    background-color: var(--background);
+}
+
+.button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 0px transparent;
+    font-size: 40px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 750px;
+    border: solid 2px white;
+    gap: 10px;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.numbers{
+    background-color: var(--number);
+    color: white;
+}
+
+.funcButton{
+    background-color: var(--func);
+    color: black;
+}
+
+.operatorButton{
+    background-color: var(--operator);
+    color: white;
+}
+
+.screen{
+    color: white;
+}
+
+#zero{
+    width: 210px;
+    border-radius: 50px;
+    text-align: left;
+    padding-left: 50px;
+}
