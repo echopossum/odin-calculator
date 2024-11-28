@@ -21,6 +21,7 @@ container.addEventListener('click',(e) =>{
                 break
             case e.target.classList.contains('operatorButton'):
                 console.log('operator pressed')
+                processOperator(e.target.id)
                 break
             case e.target.classList.contains('funcButton'):
                 console.log('function pressed')
@@ -34,7 +35,7 @@ function processNumber(val){
 }
 
 function processOperator(op){
-
+    console.log(op)
 }
 
 function processFunctionKey(fn){
@@ -48,6 +49,6 @@ function updateResultStr(newVal){
 }
 
 function evaluate(){
-    
+
 }
 
