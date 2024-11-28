@@ -35,7 +35,22 @@ function processNumber(val){
 }
 
 function processOperator(op){
-    console.log(op)
+    switch(op){
+        case 'add':
+            updateResultStr('+')
+
+            break
+        case 'subtract':
+            updateResultStr('-')
+            break
+        case 'multiply':
+            updateResultStr('X')
+            break
+        case 'divide':
+            updateResultStr('\u00F7')
+            break
+        case 'equals':
+    }
 }
 
 function processFunctionKey(fn){
