@@ -30,14 +30,24 @@ container.addEventListener('click',(e) =>{
 })
 
 function processNumber(val){
-    console.log(val)
+    updateResultStr(val)
 }
 
-function processOperator(id){
+function processOperator(op){
 
 }
 
-function processFunctionKey(id){
+function processFunctionKey(fn){
 
+}
+
+function updateResultStr(newVal){
+    newVal = newVal !== 'zero' ? newVal : '0'
+    resultStr = resultStr += newVal
+    screen.textContent = resultStr
+}
+
+function evaluate(){
+    
 }
 
