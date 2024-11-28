@@ -18,6 +18,7 @@
 
 body{
     background-color: var(--background);
+    font-family: "Avenir Next Condensed Medium", Calibri, "Gill Sans", sans-serif;
 }
 
 .button{
