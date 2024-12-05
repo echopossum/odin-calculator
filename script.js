@@ -91,8 +91,9 @@ function processFunctionKey(fn){
 
 function updateResultStr(newVal){
     screenStr = screenStr += newVal
+    console.log(screenStr)
     if(screenStr.length > 11){
-        
+        screenStr = screenStr.substring(0,10)
     }
     screen.textContent = screenStr
 }
