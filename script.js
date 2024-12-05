@@ -91,6 +91,9 @@ function processFunctionKey(fn){
 
 function updateResultStr(newVal){
     screenStr = screenStr += newVal
+    if(screenStr.length > 11){
+        
+    }
     screen.textContent = screenStr
 }
 
@@ -111,7 +114,7 @@ function evaluate(val1,val2,op){
             break
     }
     screenStr = ''
-    updateResultStr(toString(result))
+    updateResultStr(result)
     holdingStr = toString(result)
     currentOperator = ''
     console.log(`Result is ${result}`)
@@ -128,6 +131,3 @@ function checkIfOperatorIsAllowed(){
 
     return true
 }
-
-
-//evaluate(12,9,'add')
