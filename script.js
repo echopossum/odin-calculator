@@ -12,25 +12,7 @@ let currentOperator
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
 
-const container = document.querySelector('.container')
-container.addEventListener('click',(e) =>{
-    if (e.target.classList.contains('button')){
-        switch(true){
-            case e.target.classList.contains('numbers'):
-                //console.log('number presssed')
-                processNumber(e.target.id)
-                break
-            case e.target.classList.contains('operatorButton'):
-                //console.log('operator pressed')
-                processOperator(e.target.id)
-                break
-            case e.target.classList.contains('funcButton'):
-                //console.log('function pressed')
-                processFunctionKey(e.target.id)
-                break
-        }
-    }
-})
+
 
 function processNumber(val){
     val = val !== 'zero' ? val : '0'
