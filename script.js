@@ -27,7 +27,7 @@ operators.forEach(element => {
     })
 })
 
-let operatorFunctions = {
+const operatorFunctions = {
     add: function(){
         console.log('add')
     },
@@ -51,4 +51,26 @@ function deselectOperators(){
         element.classList.remove('operatorSelected')
     })
 }
+
+const funcs = document.querySelectorAll('.funcButton')
+funcs.forEach(element => {
+    element.addEventListener('click', () => {
+        funcFunctions[element.id](element)
+    })
+})
+
+const funcFunctions = {
+    clear: function(){
+        console.log('clear')
+    },
+    backspace: function(){
+        console.log('backspace')
+    },
+    modulo: function(){
+        console.log('modulo')
+    }
+}
+
+
+
 
