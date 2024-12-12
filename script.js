@@ -15,7 +15,13 @@ numbers.forEach(element => {
 });
 
 function processNumber(num){
-    console.log(num)
+    if(num === '.' && !decimalUsed){
+        console.log('decimal allowed')
+        decimalUsed = true
+    }
+    else{
+        console.log(num)
+    }
 }
 
 const operators = document.querySelectorAll('.operatorButton')
@@ -70,7 +76,3 @@ const funcFunctions = {
         console.log('modulo')
     }
 }
-
-
-
-
