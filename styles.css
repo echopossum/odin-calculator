@@ -71,7 +71,7 @@ body{
     color: white;
 }
 
-.operatorButton:active
+.operatorButton:active,
 .operatorSelected{
     background-color: var(--operatorPressed);
 }
