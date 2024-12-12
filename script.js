@@ -7,17 +7,24 @@ let screenStr = ''
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
 
-// for (let index = 0; index <= 9; index++) {
-//     const
-// }
-
 const numbers = document.querySelectorAll('.numbers')
-
 numbers.forEach(element => {
     element.addEventListener('click',() => {
         processNumber(element.id)
     })
 });
 
+function processNumber(num){
+    console.log(num)
+}
 
+const operators = document.querySelectorAll('.operatorButton')
+operators.forEach(element => {
+    element.addEventListener('click', () => {
+        processOperator(element.id)
+    })
+})
 
+function processOperator(op){
+    console.log(op)
+}
