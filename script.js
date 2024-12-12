@@ -4,6 +4,24 @@ let currentOperator = ''
 let decimalUsed = false
 let screenStr = ''
 
+let operatorFunctions = {
+    add: function(){
+        console.log('add')
+    },
+    subtract: function(){
+        console.log('subtract')
+    },
+    multiply: function(){
+        console.log('multiply')
+    },
+    divide: function(){
+        console.log('divide')
+    },
+    equals: function(){
+        console.log('equals')
+    }
+}
+
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
 
@@ -21,10 +39,7 @@ function processNumber(num){
 const operators = document.querySelectorAll('.operatorButton')
 operators.forEach(element => {
     element.addEventListener('click', () => {
-        processOperator(element.id)
+        operatorFunctions[element.id]()
     })
 })
 
-function processOperator(op){
-    console.log(op)
-}
