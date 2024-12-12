@@ -7,3 +7,17 @@ let screenStr = ''
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
 
+// for (let index = 0; index <= 9; index++) {
+//     const
+// }
+
+const numbers = document.querySelectorAll('.numbers')
+
+numbers.forEach(element => {
+    element.addEventListener('click',() => {
+        processNumber(element.id)
+    })
+});
+
+
+
