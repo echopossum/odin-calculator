@@ -85,12 +85,14 @@ body{
     padding-right: 120px;
 }
 
-#zero{
+.zero{
     width: 210px;
     border-radius: 50px;
     text-align: left;
     padding-left: 40px;
 }
+
+
 
 #backspace{
     font-size: 35px;

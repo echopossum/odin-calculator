@@ -1,7 +1,3 @@
-//get all the selectors
-//
-//create event handlers for all the buttons
-//
 let screenStr = ''
 let leftStr = ''
 let rightStr = ''
@@ -33,7 +29,6 @@ container.addEventListener('click',(e) =>{
 })
 
 function processNumber(val){
-    val = val !== 'zero' ? val : '0'
     updateResultStr(val)
     holdingStr = holdingStr += val
 }
