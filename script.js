@@ -50,6 +50,7 @@ operators.forEach(element => {
                 element.classList.add('operatorSelected')
                 number1 = Number(screenStr)
                 screenStr = ''
+                decimalUsed = false
             }
             
         }
@@ -108,7 +109,10 @@ const funcFunctions = {
 
 function updateScreen(val){
     if(screenStr.length < 11){
-        screenStr = screenStr += val
+        screenStr += val
+        if(screenStr.length > 11){
+            screenStr = screenStr.substring(0,11)
+        }
         screen.textContent = screenStr
     }
 }
