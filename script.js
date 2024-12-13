@@ -1,5 +1,5 @@
-let number1 
-let number2 
+let number1 = 0
+let number2 = 0
 let currentOperator = ''
 let decimalUsed = false
 let screenStr = ''
@@ -33,15 +33,23 @@ operators.forEach(element => {
     element.addEventListener('click', () => {
         if(element.id === 'equals'){
             if(checkIfEvaluationNeeded()){
-                operatorFunctions[element.id](element)
+                deselectOperators()
+                number2 = Number(screenStr)
+                result = operatorFunctions[currentOperator](number1, number2)
+                console.log(result)
+                screenStr = ''
+                updateScreen(result)
             }
             
         }
         else{
             if(checkIfOperatorIsAllowed()){
                 currentOperator = element.id
+                console.log(currentOperator)
                 deselectOperators()
                 element.classList.add('operatorSelected')
+                number1 = Number(screenStr)
+                screenStr = ''
             }
             
         }
@@ -64,10 +72,6 @@ const operatorFunctions = {
     divide: function(val1,val2){
         console.log('divide')
         return val1 / val2
-    },
-    equals: function(element){
-        console.log('equals')
-        element.classList.remove('operatorSelected')
     }
 }
 
@@ -110,7 +114,7 @@ function updateScreen(val){
 }
 
 function checkIfEvaluationNeeded(){
-    if(number1 === undefined){
+    if(screenStr === ''){
         return false
     }
 
