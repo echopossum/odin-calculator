@@ -33,20 +33,14 @@ operators.forEach(element => {
     element.addEventListener('click', () => {
         if(element.id === 'equals'){
             if(checkIfEvaluationNeeded()){
-                deselectOperators()
-                number2 = Number(screenStr)
-                result = operatorFunctions[currentOperator](number1, number2)
-                console.log(result)
-                screenStr = ''
-                updateScreen(result)
-                number2 = 0
-                number1 = result
-                decimalUsed = false
+                evaluate()
             }
-            
         }
         else{
             if(checkIfOperatorIsAllowed()){
+                if(checkIfEvaluationNeeded()){
+                    evaluate()
+                }
                 currentOperator = element.id
                 console.log(currentOperator)
                 deselectOperators()
@@ -55,7 +49,6 @@ operators.forEach(element => {
                 screenStr = ''
                 decimalUsed = false
             }
-            
         }
     })
 })
@@ -75,6 +68,10 @@ const operatorFunctions = {
     },
     divide: function(val1,val2){
         console.log('divide')
+        if(val1 === 0 || val2 === 0){
+            setTimeout(funcFunctions['clear'],1000)
+            return 'Error'
+        }
         return val1 / val2
     }
 }
@@ -143,4 +140,17 @@ function checkIfOperatorIsAllowed(){
         return false
     }
     return true
+}
+
+function evaluate(){
+    deselectOperators()
+    number2 = Number(screenStr)
+    result = operatorFunctions[currentOperator](number1, number2)
+    console.log(result)
+    screenStr = ''
+    updateScreen(result)
+    number2 = 0
+    number1 = result
+    decimalUsed = false
+    currentOperator = ''
 }
