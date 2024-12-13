@@ -32,22 +32,31 @@ operators.forEach(element => {
     element.addEventListener('click', () => {
         deselectOperators()
         element.classList.add('operatorSelected')
-        operatorFunctions[element.id](element)
+        if(element.id === 'equals'){
+            operatorFunctions[element.id](element)
+        }
+        else{
+            currentOperator = element.id
+        }
     })
 })
 
 const operatorFunctions = {
-    add: function(){
+    add: function(val1,val2){
         console.log('add')
+        return val1 + val2
     },
-    subtract: function(){
+    subtract: function(val1,val2){
         console.log('subtract')
+        return val1 - val2
     },
-    multiply: function(){
+    multiply: function(val1,val2){
         console.log('multiply')
+        return val1 * val2
     },
-    divide: function(){
+    divide: function(val1,val2){
         console.log('divide')
+        return val1 / val2
     },
     equals: function(element){
         console.log('equals')
