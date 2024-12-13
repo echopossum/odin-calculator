@@ -18,9 +18,12 @@ function processNumber(num){
     if(num === '.' && !decimalUsed){
         console.log('decimal allowed')
         decimalUsed = true
+        updateScreen(num)
+
     }
-    else{
+    else if(num !== '.'){
         console.log(num)
+        updateScreen(num)
     }
 }
 
@@ -67,12 +70,24 @@ funcs.forEach(element => {
 
 const funcFunctions = {
     clear: function(){
-        console.log('clear')
+        number1 = 0
+        number2 = 0
+        currentOperator = ''
+        decimalUsed = false
+        screenStr = ''
+        updateScreen('')
     },
     backspace: function(){
         console.log('backspace')
     },
     modulo: function(){
         console.log('modulo')
+    }
+}
+
+function updateScreen(val){
+    if(screenStr.length < 11){
+        screenStr = screenStr += val
+        screen.textContent = screenStr
     }
 }
