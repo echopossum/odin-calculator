@@ -39,6 +39,9 @@ operators.forEach(element => {
                 console.log(result)
                 screenStr = ''
                 updateScreen(result)
+                number2 = 0
+                number1 = result
+                decimalUsed = false
             }
             
         }
@@ -100,7 +103,13 @@ const funcFunctions = {
         deselectOperators()
     },
     backspace: function(){
-        console.log('backspace')
+        if(screenStr.length > 1){
+            screenStr = screenStr.slice(0,-1)
+        }
+        else{
+            screenStr = ''
+        }
+        updateScreen('')
     },
     modulo: function(){
         console.log('modulo')
