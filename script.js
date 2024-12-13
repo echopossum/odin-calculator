@@ -48,7 +48,7 @@ operators.forEach(element => {
                 console.log(currentOperator)
                 deselectOperators()
                 element.classList.add('operatorSelected')
-                number1 = Number(screenStr)
+                number1 = Number(screen.textContent)
                 screenStr = ''
                 decimalUsed = false
             }
@@ -139,7 +139,7 @@ function checkIfEvaluationNeeded(){
 }
 
 function checkIfOperatorIsAllowed(){
-    if(screenStr === ''){
+    if(screen.textContent.length === 0){
         return false
     }
     return true
