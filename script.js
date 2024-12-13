@@ -1,8 +1,9 @@
-let number1 = 0
-let number2 = 0
+let number1 
+let number2 
 let currentOperator = ''
 let decimalUsed = false
 let screenStr = ''
+let result = 0
 
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
@@ -30,13 +31,19 @@ function processNumber(num){
 const operators = document.querySelectorAll('.operatorButton')
 operators.forEach(element => {
     element.addEventListener('click', () => {
-        deselectOperators()
-        element.classList.add('operatorSelected')
         if(element.id === 'equals'){
-            operatorFunctions[element.id](element)
+            if(checkIfEvaluationNeeded()){
+                operatorFunctions[element.id](element)
+            }
+            
         }
         else{
-            currentOperator = element.id
+            if(checkIfOperatorIsAllowed()){
+                currentOperator = element.id
+                deselectOperators()
+                element.classList.add('operatorSelected')
+            }
+            
         }
     })
 })
@@ -85,6 +92,7 @@ const funcFunctions = {
         decimalUsed = false
         screenStr = ''
         updateScreen('')
+        deselectOperators()
     },
     backspace: function(){
         console.log('backspace')
@@ -99,4 +107,23 @@ function updateScreen(val){
         screenStr = screenStr += val
         screen.textContent = screenStr
     }
+}
+
+function checkIfEvaluationNeeded(){
+    if(number1 === undefined){
+        return false
+    }
+
+    if(currentOperator === ''){
+        return false
+    }
+
+    return true
+}
+
+function checkIfOperatorIsAllowed(){
+    if(screenStr === ''){
+        return false
+    }
+    return true
 }
