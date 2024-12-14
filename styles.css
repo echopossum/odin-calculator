@@ -1,11 +1,11 @@
 :root{
     --number:#333333;
-    --operator:#FF9F0A;
-    --func:#A5A5A5;
+    --operator:rgb(183, 0, 255);
+    --func:#00ff62;
     --background:black;
     --numberPressed:#747474;
-    --operatorPressed:#FEC88F;
-    --funcPressed:#8B8B8B;
+    --operatorPressed:#d66fff;
+    --funcPressed:#cdf9de;
 }
 
 .material-symbols-outlined {
@@ -19,6 +19,9 @@
 body{
     background-color: var(--background);
     font-family: "Avenir Next Condensed Medium", Calibri, "Gill Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button{
