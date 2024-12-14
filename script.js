@@ -156,10 +156,45 @@ function evaluate(){
 }
 
 //Extra Credit Keyboard Support
-const numberKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-const operatorKeys = ['+', '-', '*', '/']
-const funcKeys = ['Enter', 'Backspace']
+const numberKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.']
+const operatorKeys = ['+', '-', '*', '/', 'Enter']
+const funcKeys = ['Backspace']
+const operatorKeyMap = {
+    ['+']: 'add',
+    ['-']: 'subtract',
+    ['*']: 'multiply',
+    ['/']: 'divide'
+}
 
 addEventListener('keydown',(e) => {
-    console.log(e.key)
+
+    switch(true){
+        case numberKeys.includes(e.key):
+            console.log('Number Key Pressed')
+            processNumber(e.key)
+            break
+        case operatorKeys.includes(e.key):
+            if(e.key === 'Enter'){
+                if(checkIfEvaluationNeeded()){
+                    evaluate()
+                }
+            }
+            else{
+                if(checkIfOperatorIsAllowed()){
+                    if(checkIfEvaluationNeeded()){
+                        evaluate()
+                    }
+                    currentOperator = operatorKeyMap[e.key]
+                    console.log(currentOperator)
+                    deselectOperators()
+                    number1 = Number(screen.textContent)
+                    screenStr = ''
+                    decimalUsed = false
+                }
+            }
+            break
+        case funcKeys.includes(e.key):
+            funcFunctions['backspace']()
+            break
+    }
 })
