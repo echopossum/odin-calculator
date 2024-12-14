@@ -70,7 +70,7 @@ const operatorFunctions = {
         console.log('divide')
         if(val1 === 0 || val2 === 0){
             setTimeout(funcFunctions['clear'],1000)
-            return 'Error'
+            return 'REEEEEEEEEE'
         }
         return val1 / val2
     }
