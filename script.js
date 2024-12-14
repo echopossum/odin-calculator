@@ -5,9 +5,6 @@ let decimalUsed = false
 let screenStr = ''
 let result = 0
 
-
-//Auto update the numbers as you type to make that a point you can check for auto evaluation and operator selection
-
 const screen = document.querySelector('.screen')
 screen.textContent = screenStr
 
@@ -157,3 +154,12 @@ function evaluate(){
     decimalUsed = false
     currentOperator = ''
 }
+
+//Extra Credit Keyboard Support
+const numberKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+const operatorKeys = ['+', '-', '*', '/']
+const funcKeys = ['Enter', 'Backspace']
+
+addEventListener('keydown',(e) => {
+    console.log(e.key)
+})
